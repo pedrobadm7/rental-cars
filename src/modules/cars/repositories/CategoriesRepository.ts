@@ -1,20 +1,18 @@
 /* eslint-disable no-shadow */
 import { Category } from '../model/Category';
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from './ICategoriesRepository';
 
-// Data Transfer Object
-interface CreateCategoryDTO {
-  name: string;
-  description: string;
-}
-
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
   constructor() {
     this.categories = [];
   }
 
-  create({ name, description }: CreateCategoryDTO): void {
+  create({ name, description }: ICreateCategoryDTO): void {
     const category: Category = new Category();
 
     Object.assign(category, {
