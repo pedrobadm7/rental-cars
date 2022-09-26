@@ -1,5 +1,6 @@
 /* eslint-disable no-shadow */
-import { Specification } from '../../model/Specification';
+
+import { Specification } from '../../entities/Specification';
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
