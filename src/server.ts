@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import { AppError } from '@errors/AppError';
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
@@ -7,8 +8,7 @@ import swaggerFile from './swagger.json';
 import { router } from './routes';
 import './database';
 
-import './shared/container';
-import { AppError } from './errors/AppError';
+import '@shared/container';
 
 const app = express();
 
